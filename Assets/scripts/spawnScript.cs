@@ -4,8 +4,8 @@ using System.Collections;
 public class spawnScript : MonoBehaviour {
 
     public GameObject[] obj;
-    public float spawnMin = 1f;
-    public float spawnMax = 2f;
+    public float spawnMin = .5f;
+    public float spawnMax = .6f;
 
 
 	// Use this for initialization
