@@ -10,8 +10,8 @@ public class musicNote : MonoBehaviour {
         if(other.tag == "Player")
         {
             hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
-            hud.IncreaseScore(10);
-            Destroy(this.gameObject);
+            hud.IncreaseScore(1000);
+            Destroy (this.gameObject);
         }
     }
 }
