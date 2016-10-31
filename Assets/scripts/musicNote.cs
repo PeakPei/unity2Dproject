@@ -3,13 +3,15 @@ using System.Collections;
 
 public class musicNote : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    HudScript hud;
+
+    void OnTriggerEnter2d(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
+            hud.IncreaseScore(10);
+            Destroy(this.gameObject);
+        }
+    }
 }
