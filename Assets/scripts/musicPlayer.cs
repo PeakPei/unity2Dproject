@@ -15,6 +15,7 @@ public class musicPlayer : MonoBehaviour {
 
     private AudioClip GetRandomClip()
     {
+        
         return clips[Random.Range(0, clips.Length)];
     }
 	
