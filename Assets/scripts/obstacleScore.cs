@@ -3,7 +3,7 @@ using System.Collections;
 using UnitySampleAssets;
 using UnitySampleAssets._2D;
 
-public class musicNoteScore : MonoBehaviour {
+public class obstacleScore : MonoBehaviour {
 
     HudScript hud;
     //GameObject gameObj;
@@ -11,10 +11,10 @@ public class musicNoteScore : MonoBehaviour {
     void Start()
     {
         hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
-        
+
     }
-    
-    
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
         PlatformerCharacter2D character = other.gameObject.GetComponent<PlatformerCharacter2D>();
@@ -23,10 +23,9 @@ public class musicNoteScore : MonoBehaviour {
             if (character.gameObject.name == "CharacterRobotBoy")
             {
                 //hud = GameObject.Find("MainCamera").GetComponent<HudScript>();
-                hud.IncreaseScore(100);
-                hud.comboCount();
-                Debug.Log("Score 1000!");
-                Destroy(this.gameObject);
+                hud.changeHP();
+                //Debug.Log("Score -100!");
+                //Destroy(this.gameObject);
             }
         }
     }
