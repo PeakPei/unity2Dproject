@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HudScript : MonoBehaviour {
 
-    float playerScore = 0;
+    float playerScore;
 
 	
 	// Update is called once per frame
