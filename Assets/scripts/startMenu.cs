@@ -10,30 +10,21 @@ public class startMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (playB != null)
-        {
-            playB.onClick.AddListener(() =>
-            {
-                Application.LoadLevel("myScene");
-            });
-        }
+        playB.onClick.AddListener(() =>
+       {
+           Application.LoadLevel("myScene");
+       });
 
-        if (how2play != null)
-        {
-            how2play.onClick.AddListener(() =>
-           {
-               Application.LoadLevel("how2play");
+        how2play.onClick.AddListener(() =>
+       {
+           Application.LoadLevel("how2play");
 
-           });
-        }
+       });
 
-        if (ready2play != null)
+        ready2play.onClick.AddListener(() =>
         {
-            ready2play.onClick.AddListener(() =>
-             {
-                Application.LoadLevel("myScene");
-            });
-        }
+            Application.LoadLevel("myScene");
+        });
 
     }
 	

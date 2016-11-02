@@ -27,6 +27,10 @@ public class HudScript : MonoBehaviour {
     public void changeHP()
     {
         HP --;
+        if(HP <= 0)
+        {
+            Application.Quit();
+        }
     }
     
     public void comboCount()
