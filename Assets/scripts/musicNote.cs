@@ -9,7 +9,7 @@ public class musicNote : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
+            hud = GameObject.Find("MainCamera").GetComponent<HudScript>();
             hud.IncreaseScore(1000);
             Destroy (this.gameObject);
         }
