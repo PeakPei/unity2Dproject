@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000010384489280}
   - 114: {fileID: 114000013667024078}
   m_Layer: 0
-  m_Name: noteSpawn
+  m_Name: NoteSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
