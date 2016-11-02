@@ -5,12 +5,12 @@ using UnitySampleAssets._2D;
 
 public class musicNoteScore : MonoBehaviour {
 
-    HudScript hud;
+    hudScript hud;
     //GameObject gameObj;
 
     void Start()
     {
-        hud = GameObject.Find("Main Camera").GetComponent<HudScript>();
+        hud = GameObject.Find("Main Camera").GetComponent<hudScript>();
         
     }
     

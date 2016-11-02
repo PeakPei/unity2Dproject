@@ -1,11 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+//using UnityEngine.UI;
 
-public class HudScript : MonoBehaviour {
+public class hudScript : MonoBehaviour {
 
     int playerScore;
     int combo;
     int HP;
+    //public Button quit;
+    //public Button restart;
+     
+
+    protected bool isPaused = false;
+
+    void OnPauseGame()
+    {
+        isPaused = true;
+    }
 
     void Start()
     {
@@ -15,9 +26,15 @@ public class HudScript : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        //playerScore += Time.deltaTime;
-	}
+	void FixedUpdate () {
+        
+        if (HP <= 0)
+        {
+            if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+                Application.LoadLevel("myScene");
+            
+        }
+    }
 
     public void IncreaseScore(int amount)
     {
@@ -27,10 +44,6 @@ public class HudScript : MonoBehaviour {
     public void changeHP()
     {
         HP --;
-        if(HP <= 0)
-        {
-            Application.Quit();
-        }
     }
     
     public void comboCount()
@@ -43,5 +56,6 @@ public class HudScript : MonoBehaviour {
         GUI.Label(new Rect(10, 10, 100, 30), "Score: " + playerScore * 100);
         GUI.Label(new Rect(10, 40, 100, 30), "HP: " + HP);
         GUI.Label(new Rect(10, 70, 100, 30), "Combo: " + combo);
+        if (HP <= 0)  GUI.Label(new Rect(10, 100, 100, 80), "Game Over!\nPress Alt to restart");
     }
 }
