@@ -10,22 +10,32 @@ public class startMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        playB.onClick.AddListener(() =>
+        if (playB != null)
+        {
+            playB.onClick.AddListener(() =>
        {
            Application.LoadLevel("myScene");
        });
+        }
 
-        how2play.onClick.AddListener(() =>
+        if (how2play != null)
+        {
+
+            how2play.onClick.AddListener(() =>
        {
            Application.LoadLevel("how2play");
 
        });
+        }
 
-        ready2play.onClick.AddListener(() =>
+        if (ready2play != null)
+        {
+
+            ready2play.onClick.AddListener(() =>
         {
             Application.LoadLevel("myScene");
         });
-
+        }
     }
 	
 	// Update is called once per frame

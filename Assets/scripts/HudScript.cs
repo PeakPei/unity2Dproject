@@ -5,8 +5,9 @@ using System.Collections;
 public class hudScript : MonoBehaviour {
 
     int playerScore;
-    int combo;
+    public int combo;
     int HP;
+    public int multiplier;
     //public Button quit;
     //public Button restart;
      
@@ -23,6 +24,7 @@ public class hudScript : MonoBehaviour {
         playerScore = 0;
         HP = 10;
         combo = 0;
+        multiplier = 1;
     }
 	
 	// Update is called once per frame
@@ -31,14 +33,15 @@ public class hudScript : MonoBehaviour {
         if (HP <= 0)
         {
             if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
-                Application.LoadLevel("myScene");
-            
+                Application.LoadLevel("myScene");   
         }
+
+       
     }
 
     public void IncreaseScore(int amount)
     {
-        playerScore += amount;
+        playerScore += (amount * multiplier);
     }
 
     public void changeHP()
@@ -56,6 +59,8 @@ public class hudScript : MonoBehaviour {
         GUI.Label(new Rect(10, 10, 100, 30), "Score: " + playerScore * 100);
         GUI.Label(new Rect(10, 40, 100, 30), "HP: " + HP);
         GUI.Label(new Rect(10, 70, 100, 30), "Combo: " + combo);
-        if (HP <= 0)  GUI.Label(new Rect(10, 100, 100, 80), "Game Over!\nPress Alt to restart");
+        GUI.Label(new Rect(10, 100, 100, 30), "Multiplier:" + multiplier);
+        
+        if (HP <= 0)  GUI.Label(new Rect(10, 130, 100, 80), "Game Over!\nPress Alt to restart");
     }
 }

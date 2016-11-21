@@ -27,6 +27,11 @@ public class musicNoteScore : MonoBehaviour {
                 hud.comboCount();
                 Debug.Log("Score 1000!");
                 Destroy(this.gameObject);
+                if (hud.combo > 5)
+                {
+                    hud.multiplier *= (hud.combo - 4);
+                }
+                else hud.multiplier = 1;
             }
         }
     }
